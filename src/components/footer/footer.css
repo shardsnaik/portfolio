@@ -1,0 +1,206 @@
+.root-footer {
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+  }
+
+.footer{
+    background-color:#5b5b5b5b;
+}
+.f-text{
+    display: flex;
+    flex-direction: column;
+    font-size: 2vw;
+    font-weight: bold;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.upper{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--Charcol);
+    width: 75%;
+    position: relative;
+    height: 25vh;
+    left: 10%;
+    border-radius: 48px;
+    top: -6vh;
+    gap: 21vw;
+}
+.ftrbtn{
+    border-radius: 50px;
+}
+.footerblur{
+    height: 60%;
+    width: 30%;
+}
+.footerblurtwo{
+    right: -13%;
+    height: 112%;
+    width: 20%;
+}
+
+/* Lowe Fotter Styling */
+
+.lower_footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -17vh;
+    margin-left: 4vw;
+}
+.lower_footer>div>li:hover{
+    color: var(--orange);
+    cursor: pointer;
+}
+.lowr_ftr{
+    text-transform: capitalize;
+  list-style: none;
+    font-size: 1.3vw;
+    font-weight:normal;
+    gap: 2.5vh;
+    display: flex;
+    flex-direction: column;
+}
+.lowr_ftr>:nth-child(1){
+    font-size: 2vw;
+    color: var(--orange);
+    font-weight: bold;
+    margin-bottom: 2vw;
+}
+.ftrli{
+    margin: 15vw;
+}
+.ftrmail{
+    display: flex;
+}
+.ftrmail>:nth-child(1){
+    width: 20vw;
+    height: 6vh;
+    margin-right: 1vw;
+    border-radius: 7px;
+}
+ .emaibtn{
+    border-radius: 5px;
+    height: 4vh;
+} 
+.line{
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    width: 80%;
+    position: relative;
+    bottom: 26vh;
+    left: 9vw;
+}
+.blrftrone{
+    height: 27vh;
+    width: 27vw;
+    left: -3vw;
+    bottom: 35vh;
+    position: relative;
+}
+.blrftrtwo{
+    height: 27vh;
+    width: 27vw;
+    position: relative;
+    bottom: 38vh;
+    left: 35vw;
+}
+.ftrsocial{
+    height: 6vh; 
+    position: relative;
+    bottom: 59vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+}
+.ftrsocial>img{
+    cursor: pointer;
+}
+.finlwrld{
+    display: flex;
+    justify-content: space-between;
+}
+.finlwrld>:nth-child(1){
+    text-transform: capitalize;
+    margin: 0 0 4vw 5vw;
+    letter-spacing: 0.3vw;
+}
+.finlwrld>:nth-child(2){
+    letter-spacing: 0.3vw;
+    text-transform: capitalize;
+    font-weight: bolder;
+    margin-right: 13vw;
+}
+
+
+@media screen and (max-width:500px) {
+    .upper{
+        height:15vh;
+        border-radius: 28px;
+        width: 90%;
+        left: 5%;
+    }
+    .ftrbtn{
+        height: 3vh;
+        width: 6vh;
+        /* border-radius: 25px; */
+    }
+    .f-text{
+        font-size: 1.5vh;
+        line-height:1rem;
+    }
+.lower_footer {
+    top: .5vh;
+}
+
+.lowr_ftr {
+font-size: 1.5vh;
+    gap: 5vw;
+}
+.lowr_ftr>:nth-child(1) {
+    font-size: 1.8vh;
+}
+
+.ftrli {
+    margin: 3vh;
+}
+/* .ftrmail{
+    flex-direction: column;
+} */
+.emaibtn{
+    height: 1vh;
+    width: 1vh;}
+
+    .ftrmail>:nth-child(1){
+        width: 8vh;
+        height: 6vh;
+    }
+    .line{
+        bottom: -1vh;
+        left: 9vw;
+    }
+    .ftrsocial{
+        bottom: 48vh;}
+        .ftrsocial>img{
+            height: 2vh;
+        }
+        .finlwrld>:nth-child(1){
+font-size: 2vh;
+margin: 0 10vh 0 5vw;
+}
+        .finlwrld>:nth-child(2){
+font-size: 2vh;
+margin: 0;}
+.footerblurtwo {
+    width: 37%;
+}
+.blrftrone {
+    width: 35vw;
+}
+.blrftrtwo {
+    width: 40vw;}
+
+
+}

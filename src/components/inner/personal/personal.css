@@ -1,0 +1,50 @@
+.persnl_mainbx {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid var(--caloryCard);
+  border-radius: 10px;
+  background-color:var(--Charcol);
+}
+/* .persnl_mainbx:hover .hover_name{
+  display: block;
+} */
+.hover_name{
+  position: absolute;
+  right: 49vw;
+  top: 25vh;
+  font-weight: bold;
+  font-size: 7vh;
+ letter-spacing: 5px;
+  transition: 0.6s ease;
+opacity: 0.6;
+color: var(--orange);
+
+}
+.item {
+  flex: 1;
+  padding: 15px;
+  background-color: var(--trycolor);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.982);
+}
+
+.item h3 {
+  margin-top: 0;
+  color: #ffffff;
+  margin: 20px 0 20px 0;
+  cursor: pointer;
+}
+.item h3:hover{
+  scale: 1.05;
+}
+/* Adjustments for mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .persnl_mainbx {
+    flex-direction: column;
+  }
+  .hover_name{
+    right: 20vw;
+    top: 30vh;
+  }
+}
