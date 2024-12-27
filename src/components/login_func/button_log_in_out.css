@@ -1,0 +1,22 @@
+/* filepath: /C:/Users/Public/React-JS/Self_Portfolio/portfolio/src/components/login_func/buttons.css */
+.auth-button {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 1vw .8vw; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the buttons appear side by side */
+    font-size: 2.1vh; /* Increase font size */
+    margin: 4px 2px; /* Some margin */
+    cursor: pointer; /* Pointer/hand icon */
+    border-radius: 12px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+  }
+  
+  .auth-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+.logout_btn_auth{
+    background-color: red;
+}

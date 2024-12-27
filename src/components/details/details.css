@@ -172,8 +172,8 @@
 .bckbx {
     /* grid-template-columns: 20vh 20vh 20vh; */
     background-color: #404040;
-    width: 85%;
-    height: 53vh;
+    width: 70%;
+    height: 55vh;
     display: flex;
     border-radius: 2vh;
     gap: 5vw;
@@ -203,15 +203,15 @@
     bottom: 23vh;
     position: sticky;
 }
-.leftarrow{
-    right: 180vw;
-    bottom: 23vh;
+.leeft{
+    right: 144vh;
+    /* left: 25vh; */
     position: sticky;
 }
 .sectn {
     color: rgb(255, 255, 255);
     display: flex;
-    gap: 5vw;
+    gap: 3vw;
     cursor: pointer;
     align-items: center;
     width: calc(25% - 1rem);
@@ -373,7 +373,7 @@
     display: none;
 }
     .malegap {
-        margin-top: 100vh;
+        margin-top: 150vh;
     }
 
 }

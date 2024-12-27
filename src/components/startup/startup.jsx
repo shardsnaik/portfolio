@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './startup.css'
 import { Button } from '../../style/button'
 import topImag from '../../Images/Main.jpeg'
 import nd from '../../Images/fff.jpg'
 import clip from '../../Images/2ndmidleclip.mp4'
 
-const startup = () => {
+const Startup = () => {
+  
   return (
     <div className='start-detail'>
       <div className="left-startup">
@@ -13,7 +14,15 @@ const startup = () => {
         <span className='one'>Welcome to Best</span>
         <span className='stroke-text' >H-A-F-E</span>
         <div className='about-strup'><span>
-          Home Automation For Everyone. Bacially its a paln for providing cheap reliable Iot devices to home. We can convert your exsiting manual controlled equipments into digtal, IOT and voice based mechanism in offordable prices.
+        The "IoT Home Automation for Everyone" project seeks to democratize smart home
+technology by making it accessible and affordable for a wider audience. By leveraging the
+capabilities of ESP-32 and ESP-01 modules it allows users to control their home devices
+from anywhere in the world using their smartphones. And ensure seamless operation even
+in the absence of an internet connection by incorporating offline control mechanisms.
+Promote energy efficiency by enabling features like automated scheduling and remote
+monitoring of energy consumption. And when it cames to security it implements robust
+security measures, such as HTTPS communication, to protect user data and prevent
+unauthorized access.
         </span></div>
         <div>
           <Button className='btn knw'>know more</Button>
@@ -36,4 +45,4 @@ const startup = () => {
   )
 }
 
-export default startup
+export default Startup

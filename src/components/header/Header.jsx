@@ -9,6 +9,11 @@ import { Link as RouterLink } from 'react-router-dom';
 import name_img from '../../Images/LOGO.png';
 import './header.css';
 
+import { useAuth0 } from '@auth0/auth0-react';
+import LoginButton from '../login_func/login_button';
+import Logout_but from '../login_func/logout_button';
+
+
 const insta_headr_link = 'https://www.instagram.com/sharadsnaik/';
 const lnkdIn_hedr_link = 'https://www.linkedin.com/in/sharad-naik-b3238b239/';
 const mail_headr_link = 'https://mail.google.com/mail/u/0/#inbox?compose=new';
@@ -24,6 +29,8 @@ const Header = () => {
   const unopened = (value) => {
     setMenuOpened(value);
   };
+
+  const { isAuthenticated } = useAuth0();
   useEffect(() => {
     const handlesize = () => {
       smallernav(window.innerWidth <= 500)
@@ -33,6 +40,8 @@ const Header = () => {
       window.removeEventListener('resize', handlesize)
     }
   }, [])
+
+
 
   return (
     <div className='header'>
@@ -54,6 +63,8 @@ const Header = () => {
             <li><Link onClick={() => unopened(false)} to='education' spy={true} smooth={true}>Education</Link></li>
 
               <li><RouterLink onClick={() => unopened(false)} to='/Personal' className="navl" >Personal</RouterLink></li>
+<li>{isAuthenticated ? <Logout_but /> : <LoginButton />}</li>
+
               <div className='dup_social'>
                 <li><FontAwesomeIcon className='linkd' icon={faLinkedin} fade onClick={() => header_link(lnkdIn_hedr_link)} /></li>
                 <li><FontAwesomeIcon icon={faEnvelope} beatFade onClick={() => header_link(mail_headr_link)} /></li>

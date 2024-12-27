@@ -2,8 +2,8 @@ import './App.css';
 import Header from './components/header/Header'
 import Mainfile from './components/mainfile/Mainfile';
 import Details from './components/details/Details'
-import Startup from './components/startup/startup'
-import Education from './components/education/education';
+import Startup from './components/startup/Startup'
+import Education from './components/education/Education';
 import Footer from './components/footer/Footer';
 function App() {
   return (

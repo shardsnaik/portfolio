@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './mainfile.css'
 // import { Button } from 'react-native'
 import { Button } from '../../style/button'
-import img from '../../Images/img.png'
+import img from '../../Images/main_img_rm.png'
 const Mainfile = () => {
 const heirme_linkenin =()=>{
   window.open('https://www.linkedin.com/in/sharad-naik-b3238b239/', '_blank')

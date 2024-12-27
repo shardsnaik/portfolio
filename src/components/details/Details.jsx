@@ -46,11 +46,12 @@ useEffect(() => {
 
 const scrollRight = () => {
   if (containerRef.current) {
-    containerRef.current.scrollLeft += 100;
+    containerRef.current.scrollLeft += 300;
 };}
 const scrollLeft = () => {
+  console.log('ggg')
   if (containerRef.current) {
-    containerRef.current.scrollLeft -= 100;
+    containerRef.current.scrollLeft -= 200;
   }
 };
   return (
@@ -59,7 +60,7 @@ const scrollLeft = () => {
         <span>... </span>
         <span className='stroke-text'>What I Am Great At</span>
         <div className="detail">
-          <span>A passionate and innovative individual deeply intrigued by the art of crafting gadgets and projects for personal benefit.  </span>
+          <span>Explore our projects and services by clicking below! Feel free to dive into our work and utilize our offerings. Don't forget to check out our GitHub repository for code. We welcome your feedback and suggestions to help improve our projects</span>
         </div>
       </div>
 
@@ -97,7 +98,7 @@ const scrollLeft = () => {
                     </div>
                     <div><span>C++</span><span> <img className='star_img' src={rating2} alt="" /> </span>
                     </div>
-                    <div><span>CSS</span><span> <img className='star_img' src={rating1} alt="" /> </span>
+                    <div><span>Cython</span><span> <img className='star_img' src={rating1} alt="" /> </span>
                     </div>
                     <div><span>HTML</span><span> <img className='star_img' src={rating1} alt="" /> </span>
                     </div>
@@ -106,11 +107,11 @@ const scrollLeft = () => {
                 :
                 (project_data[projIndexvalue].map((proj, i) => (
           
-                  <div className={`pro_name_des ${i ===0 ? 'malegap' : ''}`} key={i}>
+                  <div onClick={() =>window.open(proj.proj_link)} className={`pro_name_des ${i ===0 ? 'malegap' : ''}`} key={i}>
                     
-                    <div><img src={proj.pro_img} />
+                    <div ><img src={proj.pro_img} />
                     </div>
-                    <div>
+                    <div  >
                       <span className='pro_name'>{proj.pro_name}</span>
                       <span className='proj_des'>{proj.pro_des}</span>
                       
@@ -118,8 +119,10 @@ const scrollLeft = () => {
                   </div>
                 )))}
 <div className='exit_icon'><FontAwesomeIcon onClick={() => setdivClicked(false)} icon={faCircleXmark} size="xl" /></div>
+
 <div  id="scrollRight" className='rightarrow' onClick={scrollRight}><FontAwesomeIcon icon={faArrowRight} size='xl'/></div>
-<div className='leftarrow' onClick={scrollLeft}><FontAwesomeIcon icon={faArrowLeft} size='xl'/></div>
+
+<div id='scrollLeft' className='leeft'    onClick={scrollLeft}><FontAwesomeIcon icon={faArrowLeft} size='xl'/></div>
             </div>
             
           </div>
@@ -150,7 +153,7 @@ const scrollLeft = () => {
             AI/ML
           </span>
           <span>
-            2 Projects
+            4 Projects
           </span>
         </div>
         <div className="box wrk_one" onClick={() => setIndexvalue(2)}>

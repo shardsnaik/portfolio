@@ -68,18 +68,18 @@
 
 .image {
     position: relative;
-    top: -3vh;
-    right: -2.8vw;
+    top: 6vh;
+    right: -.8vw;
 }
 
 .bakgrnd {
     opacity: 1;
-    right: 35vw;
-    height: 26vw;
-    width: 26vw;
+    right: 36vw;
+    height: 28vw;
+    width: 28vw;
     background-color: var(--trycolor);
     position: absolute;
-    top: 24vh;
+    top: 25vh;
     border-radius: 100%;
 }
 
