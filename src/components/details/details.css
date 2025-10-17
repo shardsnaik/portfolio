@@ -280,6 +280,64 @@
 
 }
 
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background: #222;
+  padding: 2vh 2vw;
+  border-radius: 8px;
+  width: 55vw;
+  height: 18vh;
+  max-width: 500px;
+  box-shadow: 0 0 20px white;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  animation: popupFadeIn 0.3s ease;
+}
+
+.inner-rect {
+  background-color: var(--lightblack);
+  padding: 1vh 2vw;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.8vh;
+  text-align: center;
+}
+
+.inner-rect.one {
+  background-color: var(--orange);
+  font-weight: bold;
+  height: 3vh;
+  cursor: pointer;
+}
+
+.inner-rect.two {
+    cursor: pointer;
+    font-weight: bold;
+  background-color: #444;
+  width: auto;
+}
+
+@keyframes popupFadeIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+
+
 @media screen and (max-width:500px) {
     .maindetails {
         padding-top: 3vh;
@@ -374,6 +432,12 @@
 }
     .malegap {
         margin-top: 150vh;
+    }
+
+    .inner-rect.one {
+    width: 51vw;
+    height: 6vh;
+    right: 0vw;
     }
 
 }

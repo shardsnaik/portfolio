@@ -43,7 +43,7 @@ useEffect(() => {
         </div>
       </div>
       <div className="middle">
-        <div className="bakgrnd"></div>
+        {/* <div className="bakgrnd"></div> */}
         <div className="back blur"></div>
         <div className="image">
           <img src={img} alt='no' style={{

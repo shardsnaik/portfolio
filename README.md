@@ -1,2 +1,4 @@
 # portfolio
-React code for portfolio website
+self portfolio ~SHARAD NAIK
+
+build with `react-js` 💖

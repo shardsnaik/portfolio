@@ -6,9 +6,12 @@ import { educatndata } from '../../data/educatndata';
 
 import LoginButton from '../login_func/login_button';
 import { useAuth0 } from '@auth0/auth0-react';
+// import { useAuth } from '../login_func/AuthContext';
 
 const Education = () => {
   const { isAuthenticated, loginWithRedirect } = useAuth0();
+  // const { user } = useAuth();
+
 
   const open_pdf = (pdfs) => {
     if (isAuthenticated) {
@@ -31,6 +34,9 @@ const Education = () => {
   return (
     <div>
       <div name='education' className='edu_detil'>
+        
+        {/* <p>Welcome, {user?.name}! This section is protected.</p> */}
+
         <div className="left_edu">
           {educationRows.map((row, rowIndex) => (
             <div key={rowIndex} className="edu_row">

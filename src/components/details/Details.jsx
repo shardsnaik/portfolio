@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef  } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './details.css'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFileCode, faGlobe, faArrowRight,faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { faFileCode, faGlobe, faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons'
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 import { project_data } from '../../data/projects_data'
@@ -18,23 +17,23 @@ import rating from '../../Images/rating.png'
 import { faCode } from '@fortawesome/free-solid-svg-icons'
 const Details = () => {
   const containerRef = useRef(null);
-    const [iconsize, seticonchange] = useState(() => {
-  return window.innerWidth <= 500 ? 'xl' : '2xl';
-});
+  const [iconsize, seticonchange] = useState(() => {
+    return window.innerWidth <= 500 ? 'xl' : '2xl';
+  });
 
-useEffect(() => {
- 
+  useEffect(() => {
 
-  const handleResize = () => {
-    seticonchange(window.innerWidth <= 500 ? 'xl' : '2xl');
-  };
 
-  window.addEventListener('resize', handleResize);
-  return () => {
-    window.removeEventListener('resize', handleResize);
-  };
-}, []);
-  
+    const handleResize = () => {
+      seticonchange(window.innerWidth <= 500 ? 'xl' : '2xl');
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const [divClicked, setdivClicked] = useState(false)
   const [projIndexvalue, setprojIndexvalue] = useState(0);
 
@@ -44,16 +43,29 @@ useEffect(() => {
 
   }
 
-const scrollRight = () => {
-  if (containerRef.current) {
-    containerRef.current.scrollLeft += 300;
-};}
-const scrollLeft = () => {
-  console.log('ggg')
-  if (containerRef.current) {
-    containerRef.current.scrollLeft -= 200;
+  const scrollRight = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollLeft += 300;
+    };
   }
+  const scrollLeft = () => {
+    console.log('ggg')
+    if (containerRef.current) {
+      containerRef.current.scrollLeft -= 200;
+    }
+  };
+
+const [popupVisible, setPopupVisible] = useState(false);
+const [popupContent, setPopupContent] = useState(null);
+
+const openPopup = (content) => {
+  console.log('clicked')
+  setPopupContent(content);
+  setPopupVisible(true);
 };
+
+
+
   return (
     <div className='maindetails'>
       <div className="details_info">
@@ -73,24 +85,21 @@ const scrollLeft = () => {
           className="bckdiv">
 
           <div className="bckbx" ref={containerRef}>
-            <div className={projIndexvalue === 3 ? 'langcls' : 'sectn' }>
+            <div className={projIndexvalue === 3 ? 'langcls' : 'sectn'}>
               {projIndexvalue === 3 ? (
                 <>{
                   project_data[3].map((lang, l) => (
                     <div className='progmn_data_bck_div' key={l} >
-
                       <span><img className='lang_img' src={lang.lang_img} alt="" /></span>
                       <span><img className='lang_img' src={lang.lang_img2} alt="" /></span>
                       <span><img className='lang_img' src={lang.lang_img3} alt="" /></span>
-                      
-
                     </div>
                   ))}
                   <div className="five-rows">
                     <div>
                       <span>Python</span>
                       <span> <img className='star_img' src={rating} alt="" /> </span>
-                      </div>
+                    </div>
                     <div>
                       <span>ML</span><span> <img className='star_img' src={rating2} alt="" /> </span></div>
                     <div>
@@ -105,32 +114,26 @@ const scrollLeft = () => {
                   </div>
                 </>)
                 :
-                (project_data[projIndexvalue].map((proj, i) => (
-          
-                  <div onClick={() =>window.open(proj.proj_link)} className={`pro_name_des ${i ===0 ? 'malegap' : ''}`} key={i}>
-                    
+                (project_data[projIndexvalue].map((proj, i) => (                  
+                  <div onClick={() => openPopup(proj)} className={`pro_name_des ${i === 0 ? 'malegap' : ''}`} key={i}>
+
                     <div ><img src={proj.pro_img} />
                     </div>
                     <div  >
                       <span className='pro_name'>{proj.pro_name}</span>
                       <span className='proj_des'>{proj.pro_des}</span>
-                      
+
                     </div>
                   </div>
                 )))}
-<div className='exit_icon'><FontAwesomeIcon onClick={() => setdivClicked(false)} icon={faCircleXmark} size="xl" /></div>
+                
+              <div className='exit_icon'><FontAwesomeIcon onClick={() => setdivClicked(false)} icon={faCircleXmark} size="xl" /></div>
 
-<div  id="scrollRight" className='rightarrow' onClick={scrollRight}><FontAwesomeIcon icon={faArrowRight} size='xl'/></div>
+              <div id="scrollRight" className='rightarrow' onClick={scrollRight}><FontAwesomeIcon icon={faArrowRight} size='xl' /></div>
 
-<div id='scrollLeft' className='leeft'    onClick={scrollLeft}><FontAwesomeIcon icon={faArrowLeft} size='xl'/></div>
-            </div>
-            
-          </div>
-          
-        </motion.div>
+              <div id='scrollLeft' className='leeft' onClick={scrollLeft}><FontAwesomeIcon icon={faArrowLeft} size='xl' /></div></div></div></motion.div>
 
       )}
-
 
       <div className={`wrk ${divClicked ? 'wrk_hide' : ''}`}>
         <div className="box wrk_one pro_data_one" onClick={() => setIndexvalue(0)} >
@@ -153,18 +156,18 @@ const scrollLeft = () => {
             AI/ML
           </span>
           <span>
-            4 Projects
+            6+ Projects
           </span>
         </div>
         <div className="box wrk_one" onClick={() => setIndexvalue(2)}>
           <div className="container1">
-            <FontAwesomeIcon icon={faCode} beatFade size={iconsize}  />
+            <FontAwesomeIcon icon={faCode} beatFade size={iconsize} />
           </div>
           <span>
             Web Design
           </span>
           <span>
-            7 Projects
+            4+ Projects
           </span>
         </div>
         <div className="box wrk_one" onClick={() => setIndexvalue(3)}>
@@ -214,6 +217,14 @@ const scrollLeft = () => {
 
       {/* </div> */}
 
+{popupVisible && (
+  <div className="popup-overlay" onClick={() => setPopupVisible(false)}>
+    <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+      <div className="inner-rect one" onClick={() => window.open(popupContent?.proj_link, '_blank')}>Go to the {popupContent?.pro_name} 🖇️↗️ </div>
+      <div className="inner-rect two" onClick={() => window.open(popupContent?.proj_docs, '_blank')}  >Go to documentation</div>
+    </div>
+  </div>
+)}
 
     </div>
   )
